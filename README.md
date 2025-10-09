@@ -1,51 +1,3 @@
-# 🚀 Desafio de Vaga – SIS Innov & Tech
-
-## 🏢 Sobre a Empresa
-
-Há mais de 20 anos no mercado, **a SIS Innov & Tech** é uma consultoria estratégica de **Inovação e Transformação Digital**.  
-Nossa especialidade é **impulsionar as demandas de nossos clientes**, integrando processos, pessoas e tecnologia de alta performance.
-
----
-
-## 💼 Sobre o Cargo: Desenvolvedor Java
-
-### 🧩 Requisitos Obrigatórios
-- ☁️ Desenvolvimento para **nuvem**
-- 💻 **Backend Java**
-- 🔗 Desenvolvimento de **API REST**
-- 🧪 **Testes Unitários**, Integrados, API e Front
-- 🐳 **Docker** e **Kubernetes**
-- 🧮 Banco de dados Relacional e SQL (**DB2**, **Oracle**)
-- 📊 Observabilidade e Monitoração
-
-### 🌟 Requisitos Desejáveis
-- 💡 Experiência com **Angular 6+**, **JavaScript**
-
-### ⚙️ Responsabilidades
-- Traduzir requisitos de negócio em soluções técnicas eficientes e escaláveis.  
-- Trabalhar com bancos de dados garantindo eficiência e segurança no armazenamento de dados.  
-- Realizar consultas complexas para análise e manipulação de dados.  
-- Participar ativamente de cerimônias ágeis (sprint planning, retrospectivas, etc).
-
----
-
-## 🏠 Modelo de Trabalho
-**100% Remoto**
-
-### 📃 Contratação CLT
-**Benefícios:**
-- 🍛 Vale Refeição (Cartão Swile)  
-- 🩺 Plano de Saúde  
-- 😁 Plano Odontológico  
-- 💻 Auxílio Home Office  
-- 🎓 Acesso à **Alura**  
-- 🎂 Crédito Aniversário (Cartão Swile)
-
-### 💼 Contratação PJ
-**Benefício:** 30 dias de descanso remunerado ao ano.
-
----
-
 ## 🧠 Desafio Técnico – Sistema de Gestão de Projetos e Demandas
 
 ### 📘 Contexto
@@ -57,6 +9,8 @@ O sistema será utilizado por um time de desenvolvimento para organizar suas ent
 ## 🎯 Requisitos Técnicos
 
 ### 🧱 1. Modelagem de Domínio
+
+A modelagem pode ser modificada pelo inscrito. Porém, precisa ser justificado o motivo.
 
 #### `Project`
 | Campo | Tipo | Descrição |
@@ -96,7 +50,7 @@ O sistema será utilizado por um time de desenvolvimento para organizar suas ent
 ## ✅ Requisitos Obrigatórios
 - 🧑‍💻 **Java 17+** e **Spring Boot 3+**  
 - 🧠 **Spring Data JPA**  
-- 🗄️ Banco Relacional (**PostgreSQL**, **Oracle** ou **H2**)  
+- 🗄️ Banco Relacional (**PostgreSQL** ou **H2**)  
 - ✔️ **Bean Validation**  
 - 🧪 **Testes Automatizados**  
   - Unitários (Services mockados)  
