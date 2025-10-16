@@ -1,8 +1,7 @@
-package dev.matheuslf.desafio.inscritos.domain;
+package dev.matheuslf.desafio.inscritos.dtos;
 
 import dev.matheuslf.desafio.inscritos.domain.enums.PriorityEnum;
 import dev.matheuslf.desafio.inscritos.domain.enums.StatusEnum;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,15 +9,12 @@ import lombok.Setter;
 
 import java.util.Date;
 
-@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Task {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class TaskRequestDto {
+    private Long projectId;
 
     private String title;
 
@@ -29,8 +25,4 @@ public class Task {
     private PriorityEnum priority;
 
     private Date dueDate;
-
-    @ManyToOne
-    @JoinColumn(name = "project_id")
-    private Project project;
 }
