@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/projects")
-@Tag(name = "Projects", description = "API para gerenciamento de projetos")
+@Tag(name = "Projects", description = "Gerenciamento de projetos")
 public class ProjectController {
 
     private final ProjectService service;
@@ -34,20 +34,20 @@ public class ProjectController {
 
     @GetMapping
     @Operation(
-        summary = "Listar projetos paginados",
-        description = "Retorna uma lista paginada de projetos. " +
-                     "Use 'sort' com valores como: 'name', 'id', 'startDate', etc. " +
-                     "Para ordem decrescente, use: 'name,desc'"
+            summary = "Listar projetos paginados",
+            description = "Retorna uma lista paginada de projetos. " +
+                    "Use 'sort' com valores como: 'name', 'id', 'startDate', etc. " +
+                    "Para ordem decrescente, use: 'name,desc'"
     )
     public ResponseEntity<Page<ProjectResponseDto>> getProjectsPaginated(
-        @Parameter(
-            description = "Parâmetros de paginação e ordenação",
-            schema = @Schema(
-                example = "page=0&size=10&sort=name,asc"
+            @Parameter(
+                    description = "Parâmetros de paginação e ordenação",
+                    schema = @Schema(
+                            example = "page=0&size=10&sort=name,asc"
+                    )
             )
-        )
-        @PageableDefault(size = 10, sort = "id")
-        Pageable pageable
+            @PageableDefault(size = 10, sort = "id")
+            Pageable pageable
     ) {
         return ResponseEntity.ok(service.getAllProjectsPaginated(pageable));
     }

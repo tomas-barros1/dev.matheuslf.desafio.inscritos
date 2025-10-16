@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/tasks")
-@Tag(name = "Tasks", description = "API para gerenciamento de tarefas")
+@Tag(name = "Tasks", description = "Gerenciamento de tarefas")
 public class TaskController {
     private final TaskService service;
 
@@ -33,18 +33,18 @@ public class TaskController {
 
     @GetMapping
     @Operation(
-        summary = "Listar tarefas com filtros",
-        description = "Retorna uma lista de tarefas filtradas por status, prioridade e/ou projeto"
+            summary = "Listar tarefas com filtros",
+            description = "Retorna uma lista de tarefas filtradas por status, prioridade e/ou projeto"
     )
     public ResponseEntity<List<TaskResponseDto>> getTasksByOptionalFilters(
-        @Parameter(description = "Filtrar por status da tarefa")
-        @RequestParam(required = false) StatusEnum status,
-        
-        @Parameter(description = "Filtrar por prioridade da tarefa")
-        @RequestParam(required = false) PriorityEnum priority,
-        
-        @Parameter(description = "Filtrar por ID do projeto")
-        @RequestParam(required = false) Long projectId
+            @Parameter(description = "Filtrar por status da tarefa")
+            @RequestParam(required = false) StatusEnum status,
+
+            @Parameter(description = "Filtrar por prioridade da tarefa")
+            @RequestParam(required = false) PriorityEnum priority,
+
+            @Parameter(description = "Filtrar por ID do projeto")
+            @RequestParam(required = false) Long projectId
     ) {
         return ResponseEntity.ok(service.getTaskByOptionalFilters(status, priority, projectId));
     }
@@ -52,10 +52,11 @@ public class TaskController {
     @PutMapping("/{id}/status")
     @Operation(summary = "Atualizar status da tarefa", description = "Atualiza o status de uma tarefa específica")
     public ResponseEntity<TaskResponseDto> updateTask(
-        @Parameter(description = "ID da tarefa")
-        @PathVariable Long id,
-        
-        @Valid @RequestBody TaskUpdateRequestDto dto
+            @Parameter(description = "ID da tarefa")
+            @PathVariable Long id,
+
+            @Parameter(description = "Status da tarefa: TODO, DOING ou DONE")
+            @Valid @RequestBody TaskUpdateRequestDto dto
     ) {
         return ResponseEntity.ok(service.updateTask(id, dto));
     }
@@ -63,8 +64,8 @@ public class TaskController {
     @DeleteMapping("/{id}")
     @Operation(summary = "Deletar tarefa", description = "Remove uma tarefa do sistema")
     public ResponseEntity<Void> deleteTask(
-        @Parameter(description = "ID da tarefa")
-        @PathVariable Long id
+            @Parameter(description = "ID da tarefa")
+            @PathVariable Long id
     ) {
         service.deleteTask(id);
         return ResponseEntity.noContent().build();

@@ -86,7 +86,6 @@ class TaskServiceTest {
     @Test
     @DisplayName("Should return filtered tasks successfully")
     void shouldReturnFilteredTasksSuccessfully() {
-        // Arrange
         Task task1 = new Task();
         task1.setId(1L);
         Task task2 = new Task();
@@ -104,7 +103,6 @@ class TaskServiceTest {
 
         List<TaskResponseDto> result = taskService.getTaskByOptionalFilters(StatusEnum.DOING, PriorityEnum.HIGH, 1L);
 
-        // Assert
         assertEquals(2, result.size());
         assertEquals(1L, result.get(0).getId());
         assertEquals(2L, result.get(1).getId());
