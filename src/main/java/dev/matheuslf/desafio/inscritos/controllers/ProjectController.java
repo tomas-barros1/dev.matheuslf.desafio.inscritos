@@ -6,7 +6,6 @@ import dev.matheuslf.desafio.inscritos.services.ProjectService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,10 +29,8 @@ public class ProjectController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<ProjectResponseDto>> getProjectsPaginated(@PageableDefault(size = 10, sort = "name")
-                                                                         Pageable pageable) {
-        Page<ProjectResponseDto> page = service.getAllProjectsPaginated(pageable);
-        return ResponseEntity.ok(page);
+    public ResponseEntity<Page<ProjectResponseDto>> getProjectsPaginated(Pageable pageable) {
+        return ResponseEntity.ok(service.getAllProjectsPaginated(pageable));
     }
 
 }
