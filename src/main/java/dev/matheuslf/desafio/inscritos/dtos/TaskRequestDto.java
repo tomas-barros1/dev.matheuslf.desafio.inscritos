@@ -2,12 +2,18 @@ package dev.matheuslf.desafio.inscritos.dtos;
 
 import dev.matheuslf.desafio.inscritos.domain.enums.PriorityEnum;
 import dev.matheuslf.desafio.inscritos.domain.enums.StatusEnum;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
 
 public class TaskRequestDto {
     private Long projectId;
 
+    @NotNull(message = "Título é obrigatório!")
+    @Min(5)
+    @Max(150)
     private String title;
 
     private String description;

@@ -1,12 +1,16 @@
 package dev.matheuslf.desafio.inscritos.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
 
 public class ProjectRequestDto {
     @NotNull(message = "Nome é obrigatório!")
+    @Min(3)
+    @Max(100)
     private String name;
 
     private String description;
