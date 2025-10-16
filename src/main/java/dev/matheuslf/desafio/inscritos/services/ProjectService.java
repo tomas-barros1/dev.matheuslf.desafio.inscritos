@@ -20,8 +20,9 @@ public class ProjectService {
     }
 
     public ProjectResponseDto createProject(ProjectRequestDto dto) {
-        Project project = projectRepository.save(projectMapper.dtoToProject(dto));
-        return projectMapper.projectToResponseDto(project);
+        Project project = projectMapper.dtoToProject(dto);
+        var savedProject = projectRepository.save(project);
+        return projectMapper.projectToResponseDto(savedProject);
     }
 
     public Page<ProjectResponseDto> getAllProjectsPaginated(Pageable pageable) {
